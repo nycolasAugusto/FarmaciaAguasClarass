@@ -1,50 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // ANIMAÇÃO de fade-in
-    document.body.style.opacity = "1";
-
-    // STATUS da farmácia
+    
+    // 1. Lógica de Horário
     const statusEl = document.getElementById("status-farmacia");
     const agora = new Date();
     const hora = agora.getHours();
-    const dia = agora.getDay();
+    const dia = agora.getDay(); // 0 = Domingo
+    
     let aberto = false;
 
-    // Domingo
+    // Domingo (Abre às 8h e fecha às 21h30)
     if (dia === 0) {
-        aberto = hora < 21 || (hora === 21 && agora.getMinutes() < 30);
+        aberto = hora >= 8 && (hora < 21 || (hora === 21 && agora.getMinutes() < 30));
     } 
-    // Segunda a sábado
+    // Segunda a Sábado (Abre às 8h e fecha às 22h)
     else {
         aberto = hora >= 8 && hora < 22;
     }
 
-    statusEl.textContent = aberto ? "Aberto agora" : "Fechado";
-    statusEl.style.fontWeight = "600";
-    statusEl.style.color = aberto ? "#28a745" : "#d63031";
+    if (aberto) {
+        statusEl.textContent = "Aberto agora";
+        statusEl.style.color = "#28a745"; // Verde igual da foto
+    } else {
+        statusEl.textContent = "Fechado agora";
+        statusEl.style.color = "#dc3545"; // Vermelho
+    }
+    // Remover negrito se quiser identico a foto, mas negrito ajuda a ler:
+    statusEl.style.fontWeight = "700"; 
 
-    // ===== CARROSSEL =====
+    // 2. Lógica do Carrossel
+    const slides = document.querySelector(".slides");
+    const slideImages = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
     let index = 0;
-    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slideImages.length;
 
-    function showSlide(n) {
-        const container = document.querySelector(".slides");
-        container.style.transform = `translateX(${-n * 100}%)`;
+    function updateCarousel() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
     }
 
     document.querySelector(".next").addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
+        index = (index + 1) % totalSlides;
+        updateCarousel();
     });
 
     document.querySelector(".prev").addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateCarousel();
     });
 
-    // Auto slide
-    setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            index = i;
+            updateCarousel();
+        });
+    });
+
+    let autoPlay = setInterval(() => {
+        index = (index + 1) % totalSlides;
+        updateCarousel();
     }, 5000);
+
+    const container = document.querySelector(".carousel-container");
+    container.addEventListener("mouseenter", () => clearInterval(autoPlay));
+    container.addEventListener("mouseleave", () => {
+        autoPlay = setInterval(() => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    });
 });

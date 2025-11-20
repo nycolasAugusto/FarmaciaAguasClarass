@@ -4,80 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Farmácia Águas Claras em Campo Largo. As melhores promoções em medicamentos e perfumaria. Atendimento rápido via WhatsApp.">
     <title>Farmácia Águas Claras</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <div class="container header-content">
-            <img src="./imgs/logo.jpeg" alt="Logo da Farmácia Águas Claras" class="logo">
-            <div>
-                <h1>Farmácia <span>Águas Claras</span></h1>
-                <p>Cuidado, conveniência e confiança</p>
+            <div class="logo-container">
+                <img src="./imgs/logo.jpeg" alt="Logo Farmácia Águas Claras" class="logo">
+                <div class="brand-name">
+                    <h1>Farmácia <span>Águas Claras</span></h1>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
+        <div class="white-area">
+            
+            <section class="promo-section">
+                <div class="carousel-container">
+                    <div class="slides">
+                        <div class="slide active">
+                            <img src="./imgs/bannerTeste.webp" alt="Oferta 1">
+                            <div class="slide-caption">
+                                <h2>Ofertas da Semana</h2>
+                                <p>Economize em medicamentos</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="./imgs/logo.jpeg" alt="Oferta 2">
+                            <div class="slide-caption">
+                                <h2>Perfumaria</h2>
+                                <p>Cuidados com preços especiais</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="./imgs/bannerTeste.webp" alt="Oferta 3">
+                            <div class="slide-caption">
+                                <h2>Entrega Rápida</h2>
+                                <p>Receba no conforto de casa</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- BANNER / CARROSSEL -->
-        <section class="hero">
-            <div class="carousel">
-                <div class="slides">
-                    <div class="slide active">
-                        <img src="./imgs/logo.jpeg" alt="Promoção 1">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <div class="indicators">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                    <div class="slide">
-                        <img src="./imgs/logo.jpeg" alt="Promoção 2">
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Precisa de ajuda ou quer fazer um pedido?</h2>
+                    <p>Fale diretamente com o farmacêutico agora mesmo.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5541984494487" target="_blank" class="btn-whatsapp pulse-animation">
+                            <i class="fab fa-whatsapp"></i> Fazer Pedido pelo WhatsApp
+                        </a>
                     </div>
-                    <div class="slide">
-                        <img src="./imgs/banner3.jpg" alt="Promoção 3">
+                </div>
+            </section>
+        </div>
+
+        <section class="info-bg">
+            <div class="info-grid">
+                
+                <div class="info-card">
+                    <h3>Localização</h3>
+                    <p>
+                        Rua Alcebiades Affonso Guimarães, 3945<br>
+                        Águas Claras - Campo Largo/PR
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Alcebiades+Affonso+Guimarães,+3945" target="_blank" class="card-link">
+                        Ver no Google Maps
+                    </a>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>
+                        Segunda a Sábado: 8h às 22h<br>
+                        Domingo: até às 21h30
+                    </p>
+                    <p id="status-farmacia" class="status-text">Verificando...</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Contato</h3>
+                    <p>
+                        WhatsApp: (41) 98449-4487<br>
+                        Telefone: (41) 3798-0526
+                    </p>
+                    <div class="card-footer-links">
+                        <a href="https://wa.me/5541984494487" target="_blank" class="card-link">WhatsApp</a>
+                        <a href="https://www.instagram.com/farmaciaaguasclarass/" target="_blank" class="card-link">Instagram</a>
                     </div>
                 </div>
 
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-            </div>
-        </section>
-
-        <a href="https://wa.me/5541984494487" target="_blank" class="btn-whatsapp">Falar pelo WhatsApp</a>
-
-        <!-- INFORMAÇÕES -->
-        <section class="info">
-            <div class="card">
-                <h3>Localização</h3>
-                <p>Rua Alcebiades Affonso Guimarães, 3945<br>Águas Claras - Campo Largo/PR</p>
-                <a href="https://www.google.com/maps?q=Rua+Alcebiades+Affonso+Guimaraes+3945,+Curitiba" target="_blank">
-                    Ver no Google Maps
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sábado: 8h às 22h<br>Domingo: até às 21h30</p>
-                <p id="status-farmacia"></p>
-            </div>
-
-            <div class="card">
-                <h3>Contato</h3>
-                <p>
-                    WhatsApp: (41) 98449-4487<br>
-                    Telefone: (41) 3798-0526
-                </p>
-                <div class="social">
-                    <a href="https://wa.me/5541984494487" target="_blank">WhatsApp</a>
-                    <a href="https://www.instagram.com/farmaciaaguasclarass/" target="_blank">Instagram</a>
-                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Farmácia Águas Claras — Todos os direitos reservados.</p>
+        <p>© 2025 Farmácia Águas Claras. Cuidando de você.</p>
     </footer>
 
     <script src="./script.js"></script>
 </body>
-
 </html>
