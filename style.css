@@ -1,186 +1,212 @@
+/* ====== CONFIGURAÇÕES GERAIS ====== */
 
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f9ff;
-  color: #333;
-}
-html {
-  scroll-behavior: smooth;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f9ff;
+    color: #333;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ====== HEADER ====== */
+
 header {
-  background: linear-gradient(90deg, #b3d9ff, #66b2ff);
-  padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #b3d9ff, #2985e0);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .logo {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+    width: 200px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 header h1 {
-  font-size: 30px;
-  color: #003366;
-  margin: 0;
+    font-size: 30px;
+    color: #003366;
+    margin: 0;
 }
 
 header span {
-  color: #005ce6;
+    color: #005ce6;
 }
 
 header p {
-  margin: 4px 0 0;
-  font-size: 15px;
-  color: #003366;
+    margin: 4px 0 0;
+    font-size: 15px;
+    color: #003366;
 }
 
+/* ====== CARROSSEL ====== */
 
 .hero {
-  text-align: center;
-  padding: 80px 20px 50px;
-  background: linear-gradient(to bottom, #eaf4ff, #f5f9ff);
+    padding: 0;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero h2 {
-  font-size: 28px;
-  color: #004d99;
-  margin-bottom: 10px;
+.carousel {
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
-.hero p {
-  color: #555;
-  font-size: 17px;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
 }
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Setas do carrossel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ====== BOTÃO WHATSAPP ====== */
 
 .btn-whatsapp {
-  background-color: #25d366;
-  color: white;
-  padding: 15px 35px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  transition: 0.3s;
+    background-color: #25d366;
+    color: white;
+    padding: 30px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    transition: 0.3s;
 }
 
 .btn-whatsapp:hover {
-  background-color: #1ebd5a;
-  transform: scale(1.05);
+    background-color: #1ebd5a;
+    transform: scale(1.05);
 }
 
+/* ====== SEÇÃO INFORMAÇÕES ====== */
 
 .info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; 
-  gap: 24px;
-  padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 60px 20px;
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  flex: 1;
-  padding: 25px;
-  min-width: 250px;
-  max-width: 270px;
-  min-height: 170px; 
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: 0.3s;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    padding: 25px;
+    min-width: 250px;
+    max-width: 270px;
+    text-align: center;
+    transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .card h3 {
-  color: #004d99;
-  margin-bottom: 10px;
-  font-size: 20px;
+    color: #004d99;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .card a {
-  color: #0073e6;
-  text-decoration: none;
-  font-weight: 500;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .card a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .social {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .social a {
-  display: inline-block;
-  color: #005ce6;
-  font-weight: 500;
-  margin: 0 8px;
+    display: inline-block;
+    color: #005ce6;
+    margin: 0 8px;
 }
+
+/* ====== FOOTER ====== */
 
 footer {
-  text-align: center;
-  background-color: #e6f0ff;
-  padding: 15px;
-  color: #333;
-  font-size: 14px;
-  border-top: 2px solid #66b2ff;
+    text-align: center;
+    background-color: #e6f0ff;
+    padding: 15px;
+    color: #333;
+    font-size: 14px;
+    border-top: 2px solid #66b2ff;
 }
 
+/* ====== RESPONSIVIDADE ====== */
 
 @media (max-width: 700px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .logo {
-    width: 220px;
-    height: auto;
-  }
+    .logo {
+        width: 220px;
+    }
 
-  .hero {
-    padding: 60px 20px;
-  }
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-body {
-  opacity: 0;
-  transition: opacity 1s ease;
+    .card {
+        width: 90%;
+    }
 }

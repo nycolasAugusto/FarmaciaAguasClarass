@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmácia Águas Claras</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 
 <body>
@@ -21,13 +20,30 @@
     </header>
 
     <main>
+
+        <!-- BANNER / CARROSSEL -->
         <section class="hero">
-            <h2>Saúde e atendimento ao seu alcance</h2>
-            <p>Converse conosco pelo WhatsApp e receba atendimento rápido, entrega até as 22h e orientação farmacêutica
-                personalizada.</p>
-            <a href="https://wa.me/5541984494487" target="_blank" class="btn-whatsapp">Falar pelo WhatsApp</a>
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="./imgs/logo.jpeg" alt="Promoção 1">
+                    </div>
+                    <div class="slide">
+                        <img src="./imgs/logo.jpeg" alt="Promoção 2">
+                    </div>
+                    <div class="slide">
+                        <img src="./imgs/banner3.jpg" alt="Promoção 3">
+                    </div>
+                </div>
+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
         </section>
 
+        <a href="https://wa.me/5541984494487" target="_blank" class="btn-whatsapp">Falar pelo WhatsApp</a>
+
+        <!-- INFORMAÇÕES -->
         <section class="info">
             <div class="card">
                 <h3>Localização</h3>
@@ -52,7 +68,6 @@
                 <div class="social">
                     <a href="https://wa.me/5541984494487" target="_blank">WhatsApp</a>
                     <a href="https://www.instagram.com/farmaciaaguasclarass/" target="_blank">Instagram</a>
-
                 </div>
             </div>
         </section>
@@ -61,10 +76,8 @@
     <footer>
         <p>&copy; 2025 Farmácia Águas Claras — Todos os direitos reservados.</p>
     </footer>
-       <script src="./script.js"></script>
-    
-    
-</body>
 
+    <script src="./script.js"></script>
+</body>
 
 </html>
