@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Designer - Gerenciar Banners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">Gerenciador de Banners</h1>
+
+        <div class="card">
+            <h2>Adicionar Nova Promoção</h2>
+            
+            <div class="form-group">
+                <label>Senha de Segurança:</label>
+                <input type="password" id="senhaAdmin" placeholder="Digite a senha definida no appsettings.json">
+            </div>
+
+            <div class="row">
+                <div class="form-group flex-1">
+                    <label>Título:</label>
+                    <input type="text" id="titulo" placeholder="Ex: Verão 2025">
+                </div>
+                <div class="form-group flex-1">
+                    <label>Descrição:</label>
+                    <input type="text" id="descricao" placeholder="Ex: Protetor solar com 50% OFF">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Imagem (Banner):</label>
+                <input type="file" id="imagemInput" accept="image/*">
+            </div>
+
+            <button class="btn-save" onclick="enviarBanner()">Subir Banner</button>
+            <div id="msg"></div>
+        </div>
+
+        <h2 class="section-title">O que está no ar agora:</h2>
+        
+        <div class="banner-list" id="listaBanners">
+            <p style="color: #666;">Carregando banners...</p>
+        </div>
+    </div>
+
+    <script src="./admin.js"></script>
+</body>
+</html>

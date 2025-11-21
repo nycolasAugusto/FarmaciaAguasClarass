@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "JhHBjoJsIMfh9+ijm3DdG+6f/u3dUonhBEyzLSrRHy8=",
+  "Source": "FarmaciaAPI",
+  "BasePath": "_content/FarmaciaAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FarmaciaAPI\\wwwroot",
+      "Source": "FarmaciaAPI",
+      "ContentRoot": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\",
+      "BasePath": "_content/FarmaciaAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg",
+      "SourceId": "FarmaciaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\",
+      "BasePath": "_content/FarmaciaAPI",
+      "RelativePath": "imagens/4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg"
+    }
+  ]
+}

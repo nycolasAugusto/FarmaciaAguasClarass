@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg",
+      "PackagePath": "staticwebassets\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FarmaciaAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FarmaciaAPI.props",
+      "PackagePath": "build\\FarmaciaAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FarmaciaAPI.props",
+      "PackagePath": "buildMultiTargeting\\FarmaciaAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FarmaciaAPI.props",
+      "PackagePath": "buildTransitive\\FarmaciaAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
