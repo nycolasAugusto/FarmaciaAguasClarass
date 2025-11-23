@@ -1,7 +1,7 @@
 /* ====== RESET & VARIAVEIS ====== */
 :root {
     /* CORES */
-    --blue-header: #2563eb;   /* Azul Royal (Mais claro que o anterior, como pediu) */
+    --blue-header: #0a67d8;   /* Seu Azul Royal Atual */
     --blue-title: #004085;    /* Azul escuro para Títulos dos Cards */
     --blue-link: #3b82f6;     /* Azul claro para links */
     --bg-infos: #eff6ff;      /* Azul MUITO claro para fundo das infos */
@@ -22,15 +22,17 @@ body {
     overflow-x: hidden;
 }
 
-/* ====== HEADER ====== */
+/* ====== HEADER ATUALIZADO (Logo Esq / Infos Dir) ====== */
+/* ====== HEADER (Base - Configuração para PC/Desktop) ====== */
 header {
     background: var(--blue-header);
-    padding: 15px 0;
+    padding: 20px 0; /* AUMENTEI: De 15px para 20px para ficar maior no PC */
     color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .header-content {
@@ -38,35 +40,101 @@ header {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Logo na Esquerda, Infos na Direita */
+    align-items: center;
 }
 
+/* --- LADO ESQUERDO: LOGO --- */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 15px;
 }
 
-/* LOGO RETANGULAR (Pedido atendido) */
 .logo {
-    width: 180px; /* Mais larga */
-    height: auto; /* Altura automática para não distorcer */
-    max-height: 100px; /* Limite de altura */
-    border-radius: 10px; /* Bordas arredondadas leves */
-    object-fit: contain;
+    width: 90px; /* AUMENTEI: De 70px para 90px (Para aparecer bem no PC) */
+    height: auto;
+    border-radius: 12px;
     background-color: white;
-    padding: 5px; /* Espacinho branco em volta */
+    padding: 5px;
+    object-fit: contain;
 }
 
 .brand-name h1 {
-    font-size: 1.8rem;
-    color: white;
-    line-height: 1.2;
-    margin-bottom: 0;
+    font-size: 1.8rem; /* AUMENTEI: Fonte maior no PC */
+    line-height: 1.1;
+    margin: 0;
+    font-weight: 700;
+    text-align: left;
 }
-.brand-name span { color: #bfdbfe; font-weight: 700; } 
+
+.brand-name span {
+    color: #93c5fd;
+    font-size: 1.8rem; /* Acompanha o tamanho do título */
+}
+
+/* --- LADO DIREITO: EXTRAS (PC) --- */
+.header-extras {
+    display: flex;
+    flex-direction: column; /* No PC fica um em cima do outro (Bonito) */
+    align-items: flex-end;    /* Alinhado à direita */
+    gap: 8px;
+}
+
+.extra-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem; /* Fonte legível no PC */
+    font-weight: 500;
+}
+
+.extra-item i { font-size: 1.3rem; }
+
+
+/* ====== RESPONSIVIDADE (Ajustes para Celular) ====== */
+@media (max-width: 768px) {
+    
+    /* 1. Header mais fino no celular */
+    header {
+        padding: 10px 0; /* Reduzi bastante para não ocupar tela */
+    }
+
+    .header-content {
+        flex-direction: column; /* Empilha: Logo em cima, Infos embaixo */
+        gap: 10px;
+    }
+
+    /* 2. Logo e Texto menores */
+    .logo { width: 60px; } /* Logo pequena no mobile */
+    .brand-name h1 { font-size: 1.4rem; text-align: center; }
+    .brand-name span { font-size: 1.4rem; }
+    
+    .logo-container {
+        flex-direction: row; /* Mantém logo ao lado do texto */
+        justify-content: center;
+    }
+
+    /* 3. O SEGREDO: Infos lado a lado no celular para economizar altura */
+    .header-extras {
+        flex-direction: row; /* Mudo de coluna para LINHA */
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.2); /* Linha suave separando */
+        padding-top: 10px;
+    }
+
+    .extra-item {
+        font-size: 0.9rem; /* Fonte menor */
+    }
+    
+    /* Opcional: Esconder o texto "Entrega Rápida" no celular e deixar só a motinho */
+    /* Se quiser esconder, tire o comentário da linha abaixo: */
+    /*.extra-item:first-child span { display: none; } */
+}
+
 
 /* ====== ÁREA BRANCA (PROMOS + CTA) ====== */
 .white-area {
@@ -188,9 +256,9 @@ header {
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* ====== INFOS ESTILO "CARD LIMPO" (Igual à foto) ====== */
+/* ====== INFOS ESTILO "CARD LIMPO" ====== */
 .info-bg {
-    background-color: var(--bg-infos); /* Fundo azulzinho claro */
+    background-color: var(--bg-infos);
     padding: 60px 20px;
 }
 
@@ -203,19 +271,18 @@ header {
     justify-content: center;
 }
 
-/* Estilo exato do Card da foto */
 .info-card {
     background: white;
     flex: 1;
     min-width: 300px;
-    max-width: 350px; /* Limita largura para ficar igual cards */
+    max-width: 350px;
     padding: 30px 20px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espaça conteúdo verticalmente */
+    justify-content: space-between;
     align-items: center;
     gap: 15px;
 }
@@ -233,7 +300,6 @@ header {
     line-height: 1.5;
 }
 
-/* Links dentro dos cards */
 .card-link {
     color: var(--blue-link);
     text-decoration: none;
@@ -241,13 +307,11 @@ header {
 }
 .card-link:hover { text-decoration: underline; }
 
-/* Footer dos cards (para alinhar whats e insta lado a lado) */
 .card-footer-links {
     display: flex;
     gap: 15px;
 }
 
-/* Status Aberto/Fechado */
 .status-text {
     font-weight: 700;
     font-size: 1rem;
@@ -263,12 +327,30 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsividade */
-@media (max-width: 700px) {
-    .header-content { flex-direction: column; text-align: center; }
-    .logo-container { flex-direction: column; gap: 10px; }
-    .logo { width: 140px; }
-    .cta-content h2 { font-size: 1.4rem; }
+/* ====== RESPONSIVIDADE ATUALIZADA ====== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Empilha tudo no celular */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo-container {
+        flex-direction: column; /* Logo em cima do nome */
+        gap: 10px;
+    }
     
+    .brand-name h1 {
+        text-align: center;
+    }
+
+    .header-extras {
+        align-items: center; /* Centraliza as infos no celular */
+        gap: 10px;
+    }
+
+    .logo { width: 140px; }
+    
+    .cta-content h2 { font-size: 1.4rem; }
     .info-card { width: 100%; max-width: 100%; }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JhHBjoJsIMfh9+ijm3DdG+6f/u3dUonhBEyzLSrRHy8=",
+  "Hash": "hmZx6EXCaKTbVsxfhvvH6T3Pl7mZqPD2QZ252CrG4jw=",
   "Source": "FarmaciaAPI",
   "BasePath": "_content/FarmaciaAPI",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg",
+      "Identity": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imagens\\f6524da7-9a44-4e12-8521-7c78ced982cd.jpg",
       "SourceId": "FarmaciaAPI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\",
       "BasePath": "_content/FarmaciaAPI",
-      "RelativePath": "imagens/4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg",
+      "RelativePath": "imagens/f6524da7-9a44-4e12-8521-7c78ced982cd.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagens\\4b9ccbc0-695e-4249-b800-21358c4307ef.jpeg"
+      "OriginalItemSpec": "wwwroot\\imagens\\f6524da7-9a44-4e12-8521-7c78ced982cd.jpg"
     }
   ]
 }
