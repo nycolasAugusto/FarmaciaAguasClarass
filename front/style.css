@@ -22,11 +22,10 @@ body {
     overflow-x: hidden;
 }
 
-/* ====== HEADER ATUALIZADO (Logo Esq / Infos Dir) ====== */
-/* ====== HEADER (Base - Configuração para PC/Desktop) ====== */
+/* ====== HEADER (PC / Desktop) ====== */
 header {
     background: var(--blue-header);
-    padding: 20px 0; /* AUMENTEI: De 15px para 20px para ficar maior no PC */
+    padding: 15px 0;
     color: white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: sticky;
@@ -44,7 +43,7 @@ header {
     align-items: center;
 }
 
-/* --- LADO ESQUERDO: LOGO --- */
+/* --- LADO ESQUERDO: LOGO + NOME --- */
 .logo-container {
     display: flex;
     align-items: center;
@@ -52,16 +51,17 @@ header {
 }
 
 .logo {
-    width: 90px; /* AUMENTEI: De 70px para 90px (Para aparecer bem no PC) */
+    width: 80px; /* Tamanho bom para PC */
     height: auto;
-    border-radius: 12px;
+    max-height: 80px;
+    border-radius: 10px;
     background-color: white;
     padding: 5px;
     object-fit: contain;
 }
 
 .brand-name h1 {
-    font-size: 1.8rem; /* AUMENTEI: Fonte maior no PC */
+    font-size: 1.6rem;
     line-height: 1.1;
     margin: 0;
     font-weight: 700;
@@ -69,70 +69,49 @@ header {
 }
 
 .brand-name span {
-    color: #93c5fd;
-    font-size: 1.8rem; /* Acompanha o tamanho do título */
+    color: #abcef8; /* Azul clarinho para destaque */
+    font-weight: 700;
 }
 
-/* --- LADO DIREITO: EXTRAS (PC) --- */
+/* --- LADO DIREITO: EXTRAS (MOTO + WHATS) --- */
 .header-extras {
     display: flex;
-    flex-direction: column; /* No PC fica um em cima do outro (Bonito) */
+    flex-direction: column; /* No PC: Um em cima do outro */
     align-items: flex-end;    /* Alinhado à direita */
-    gap: 8px;
+    gap: 6px;
 }
 
 .extra-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem; /* Fonte legível no PC */
+    font-size: 1.1rem;
     font-weight: 500;
+    color: white; /* Garante texto branco */
 }
 
-.extra-item i { font-size: 1.3rem; }
+.extra-item i {
+    font-size: 1.3rem;
+}
 
+/* --- CLASSE MÁGICA PARA O LINK DO WHATSAPP --- */
+/* Isso impede que o celular deixe azul ou sublinhado */
+.link-branco {
+    color: white !important;       
+    text-decoration: none !important; 
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
 
-/* ====== RESPONSIVIDADE (Ajustes para Celular) ====== */
-@media (max-width: 768px) {
-    
-    /* 1. Header mais fino no celular */
-    header {
-        padding: 10px 0; /* Reduzi bastante para não ocupar tela */
-    }
+.link-branco:hover {
+    opacity: 0.9; /* Leve efeito ao passar o mouse */
+    color: white !important;
+    text-decoration: none !important;
+}
 
-    .header-content {
-        flex-direction: column; /* Empilha: Logo em cima, Infos embaixo */
-        gap: 10px;
-    }
-
-    /* 2. Logo e Texto menores */
-    .logo { width: 60px; } /* Logo pequena no mobile */
-    .brand-name h1 { font-size: 1.4rem; text-align: center; }
-    .brand-name span { font-size: 1.4rem; }
-    
-    .logo-container {
-        flex-direction: row; /* Mantém logo ao lado do texto */
-        justify-content: center;
-    }
-
-    /* 3. O SEGREDO: Infos lado a lado no celular para economizar altura */
-    .header-extras {
-        flex-direction: row; /* Mudo de coluna para LINHA */
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        width: 100%;
-        border-top: 1px solid rgba(255,255,255,0.2); /* Linha suave separando */
-        padding-top: 10px;
-    }
-
-    .extra-item {
-        font-size: 0.9rem; /* Fonte menor */
-    }
-    
-    /* Opcional: Esconder o texto "Entrega Rápida" no celular e deixar só a motinho */
-    /* Se quiser esconder, tire o comentário da linha abaixo: */
-    /*.extra-item:first-child span { display: none; } */
+/* Garante cor branca mesmo se já foi clicado */
+.link-branco:visited, .link-branco:active {
+    color: white !important;
 }
 
 
@@ -327,30 +306,40 @@ footer {
     font-size: 0.85rem;
 }
 
-/* ====== RESPONSIVIDADE ATUALIZADA ====== */
+/* ====== RESPONSIVIDADE (Celular / Tablet) ====== */
 @media (max-width: 768px) {
+    
+    header {
+        padding: 10px 0; /* Header mais fino no celular */
+    }
+
     .header-content {
-        flex-direction: column; /* Empilha tudo no celular */
-        gap: 15px;
+        flex-direction: column; /* Empilha logo e infos */
+        gap: 10px;
         text-align: center;
     }
 
+    /* Ajustes da Logo no Mobile */
+    .logo { width: 60px; } 
+    .brand-name h1 { font-size: 1.4rem; text-align: center; }
+    
     .logo-container {
-        flex-direction: column; /* Logo em cima do nome */
-        gap: 10px;
-    }
-    
-    .brand-name h1 {
-        text-align: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
+    /* Ajustes das Infos no Mobile */
     .header-extras {
-        align-items: center; /* Centraliza as infos no celular */
-        gap: 10px;
+        flex-direction: row; /* No Celular: Lado a Lado */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px; /* Espaço entre a moto e o whats */
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.2); /* Linha fina separando */
     }
 
-    .logo { width: 140px; }
-    
-    .cta-content h2 { font-size: 1.4rem; }
-    .info-card { width: 100%; max-width: 100%; }
+    .extra-item {
+        font-size: 0.95rem; /* Letra um pouco menor */
+    }
 }
