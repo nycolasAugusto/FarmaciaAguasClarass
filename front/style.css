@@ -23,6 +23,7 @@ body {
 }
 
 /* ====== HEADER (PC / Desktop) ====== */
+/* ====== HEADER (PC / Desktop) ====== */
 header {
     background: var(--blue-header);
     padding: 15px 0;
@@ -39,7 +40,7 @@ header {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* Logo na Esquerda, Infos na Direita */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -51,7 +52,7 @@ header {
 }
 
 .logo {
-    width: 80px; /* Tamanho bom para PC */
+    width: 80px;
     height: auto;
     max-height: 80px;
     border-radius: 10px;
@@ -69,51 +70,88 @@ header {
 }
 
 .brand-name span {
-    color: #abcef8; /* Azul clarinho para destaque */
+    color: #abcef8;
     font-weight: 700;
 }
 
-/* --- LADO DIREITO: EXTRAS (MOTO + WHATS) --- */
+/* --- LADO DIREITO: EXTRAS --- */
 .header-extras {
     display: flex;
-    flex-direction: column; /* No PC: Um em cima do outro */
-    align-items: flex-end;    /* Alinhado à direita */
+    flex-direction: column;
+    align-items: flex-end;
     gap: 6px;
 }
 
+/* Itens normais (divs) */
 .extra-item {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1.1rem;
     font-weight: 500;
-    color: white; /* Garante texto branco */
+    color: white;
 }
 
 .extra-item i {
     font-size: 1.3rem;
 }
 
-/* --- CLASSE MÁGICA PARA O LINK DO WHATSAPP --- */
-/* Isso impede que o celular deixe azul ou sublinhado */
-.link-branco {
-    color: white !important;       
-    text-decoration: none !important; 
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.link-branco:hover {
-    opacity: 0.9; /* Leve efeito ao passar o mouse */
-    color: white !important;
+/* --- CORREÇÃO DEFINITIVA PARA O LINK (IPHONE/ANDROID) --- */
+/* Isso sobrepõe qualquer configuração padrão do celular */
+a.link-branco,
+a.link-branco:link,
+a.link-branco:visited,
+a.link-branco:hover,
+a.link-branco:active {
+    color: #ffffff !important;
     text-decoration: none !important;
+    -webkit-text-fill-color: #ffffff !important; /* O segredo para iOS */
+    cursor: pointer;
 }
 
-/* Garante cor branca mesmo se já foi clicado */
-.link-branco:visited, .link-branco:active {
-    color: white !important;
+/* Garante que o texto e o ícone dentro do link também obedeçam */
+a.link-branco span,
+a.link-branco i {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
+
+/* ====== RESPONSIVIDADE (Celular / Tablet) ====== */
+@media (max-width: 768px) {
+    
+    header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo { width: 60px; } 
+    .brand-name h1 { font-size: 1.4rem; text-align: center; }
+    
+    .logo-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header-extras {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .extra-item {
+        font-size: 0.95rem;
+    }
+}
 
 /* ====== ÁREA BRANCA (PROMOS + CTA) ====== */
 .white-area {
