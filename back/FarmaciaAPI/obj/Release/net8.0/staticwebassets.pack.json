@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\admin.css",
+      "PackagePath": "staticwebassets\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\admin.html",
+      "PackagePath": "staticwebassets\\admin.html"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\admin.js",
+      "PackagePath": "staticwebassets\\admin.js"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imagens\\d9a4d4a1-dcba-4d1d-a903-292767bdc1f9.jpeg",
+      "PackagePath": "staticwebassets\\imagens\\d9a4d4a1-dcba-4d1d-a903-292767bdc1f9.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imgs\\bannerTeste.webp",
+      "PackagePath": "staticwebassets\\imgs\\bannerTeste.webp"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\imgs\\logo.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\logo.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\script.js",
+      "PackagePath": "staticwebassets\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\nycol\\Desktop\\farm\\back\\FarmaciaAPI\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.FarmaciaAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.FarmaciaAPI.props",
+      "PackagePath": "build\\FarmaciaAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FarmaciaAPI.props",
+      "PackagePath": "buildMultiTargeting\\FarmaciaAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.FarmaciaAPI.props",
+      "PackagePath": "buildTransitive\\FarmaciaAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

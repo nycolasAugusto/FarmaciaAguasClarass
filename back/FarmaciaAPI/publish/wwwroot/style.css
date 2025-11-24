@@ -1,0 +1,383 @@
+/* ====== RESET & VARIAVEIS ====== */
+:root {
+    /* CORES */
+    --blue-header: #0a67d8;   /* Seu Azul Royal Atual */
+    --blue-title: #004085;    /* Azul escuro para Títulos dos Cards */
+    --blue-link: #3b82f6;     /* Azul claro para links */
+    --bg-infos: #eff6ff;      /* Azul MUITO claro para fundo das infos */
+    
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-gray: #555;
+    
+    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ====== HEADER (PC / Desktop) ====== */
+/* ====== HEADER (PC / Desktop) ====== */
+header {
+    background: var(--blue-header);
+    padding: 15px 0;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LADO ESQUERDO: LOGO + NOME --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    max-height: 80px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+    object-fit: contain;
+}
+
+.brand-name h1 {
+    font-size: 1.6rem;
+    line-height: 1.1;
+    margin: 0;
+    font-weight: 700;
+    text-align: left;
+}
+
+.brand-name span {
+    color: #abcef8;
+    font-weight: 700;
+}
+
+/* --- LADO DIREITO: EXTRAS --- */
+.header-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+/* Itens normais (divs) */
+.extra-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.extra-item i {
+    font-size: 1.3rem;
+}
+
+/* --- CORREÇÃO DEFINITIVA PARA O LINK (IPHONE/ANDROID) --- */
+/* Isso sobrepõe qualquer configuração padrão do celular */
+a.link-branco,
+a.link-branco:link,
+a.link-branco:visited,
+a.link-branco:hover,
+a.link-branco:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    -webkit-text-fill-color: #ffffff !important; /* O segredo para iOS */
+    cursor: pointer;
+}
+
+/* Garante que o texto e o ícone dentro do link também obedeçam */
+a.link-branco span,
+a.link-branco i {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ====== RESPONSIVIDADE (Celular / Tablet) ====== */
+@media (max-width: 768px) {
+    
+    header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo { width: 60px; } 
+    .brand-name h1 { font-size: 1.4rem; text-align: center; }
+    
+    .logo-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header-extras {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .extra-item {
+        font-size: 0.95rem;
+    }
+}
+
+/* ====== ÁREA BRANCA (PROMOS + CTA) ====== */
+.white-area {
+    background-color: var(--white);
+    padding-bottom: 20px;
+}
+
+/* CARROSSEL */
+.promo-section {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+@media(min-width: 1130px) {
+    .promo-section { margin-left: auto; margin-right: auto; }
+}
+
+.carousel-container {
+    position: relative;
+    height: 300px; /* Mobile */
+    background: #f1f5f9;
+}
+@media(min-width: 768px) { .carousel-container { height: 450px; } }
+
+.slides { display: flex; height: 100%; transition: transform 0.5s ease; }
+.slide { min-width: 100%; height: 100%; position: relative; }
+.slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
+
+.slide-caption {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    max-width: 80%;
+}
+.slide-caption h2 { font-size: 1.8rem; margin-bottom: 5px; }
+
+/* Setas */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+.nav-btn:hover { background: white; color: var(--blue-header); }
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot.active { background: white; transform: scale(1.2); }
+
+/* CTA (SÓ WHATSAPP AGORA) */
+.cta-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+.cta-content h2 { color: var(--blue-header); font-size: 1.6rem; margin-bottom: 5px; }
+.cta-content p { color: var(--text-gray); margin-bottom: 20px; }
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 16px 35px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 350px;
+}
+.btn-whatsapp:hover { transform: translateY(-3px); }
+
+.pulse-animation { animation: pulse 2s infinite; }
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ====== INFOS ESTILO "CARD LIMPO" ====== */
+.info-bg {
+    background-color: var(--bg-infos);
+    padding: 60px 20px;
+}
+
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.info-card {
+    background: white;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-card h3 {
+    color: var(--blue-title);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.card-link {
+    color: var(--blue-link);
+    text-decoration: none;
+    font-weight: 500;
+}
+.card-link:hover { text-decoration: underline; }
+
+.card-footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.status-text {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: var(--blue-header);
+    color: #e0f2fe;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+}
+
+/* ====== RESPONSIVIDADE (Celular / Tablet) ====== */
+@media (max-width: 768px) {
+    
+    header {
+        padding: 10px 0; /* Header mais fino no celular */
+    }
+
+    .header-content {
+        flex-direction: column; /* Empilha logo e infos */
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* Ajustes da Logo no Mobile */
+    .logo { width: 60px; } 
+    .brand-name h1 { font-size: 1.4rem; text-align: center; }
+    
+    .logo-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Ajustes das Infos no Mobile */
+    .header-extras {
+        flex-direction: row; /* No Celular: Lado a Lado */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px; /* Espaço entre a moto e o whats */
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.2); /* Linha fina separando */
+    }
+
+    .extra-item {
+        font-size: 0.95rem; /* Letra um pouco menor */
+    }
+}

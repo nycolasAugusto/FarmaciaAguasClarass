@@ -134,3 +134,8 @@ C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\obj\Debug\net8.0\FarmaciaAPI.pdb
 C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\obj\Debug\net8.0\FarmaciaAPI.genruntimeconfig.cache
 C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\obj\Debug\net8.0\ref\FarmaciaAPI.dll
 C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\FarmaciaAPI.staticwebassets.runtime.json
+C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\publish\web.config
+C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\publish\appsettings.Development.json
+C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\publish\appsettings.json
+C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\publish\FarmaciaAPI.deps.json
+C:\Users\nycol\Desktop\farm\back\FarmaciaAPI\bin\Debug\net8.0\publish\FarmaciaAPI.runtimeconfig.json
