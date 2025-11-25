@@ -20,25 +20,21 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
+                .AllowAnyMethod()
+                .AllowAnyHeader();
         });
 });
 
 var app = builder.Build();
 
-// 4. Configurações de Pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// 🔥 Swagger agora sempre ativo
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors("PermitirTudo");
 
-
-// 5. Habilitar servir arquivos estáticos (para acessarmos as imagens via URL)
-app.UseStaticFiles(); 
+// 5. Habilitar servir arquivos estáticos
+app.UseStaticFiles();
 
 app.MapControllers();
 
