@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. CARROSSEL DINÂMICO (CORRIGIDO)
     // ==================================================
     
-    const API_BASE_URL = ""; // Vazio para usar o mesmo domínio
+    const API_BASE_URL = "https://farmaciaaguasclarass-1.onrender.com"; // Vazio para usar o mesmo domínio
     
     // Variáveis globais do carrossel
     let currentSlide = 0;

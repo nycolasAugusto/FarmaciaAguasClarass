@@ -36,11 +36,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("PermitirTudo");
 
-app.UseHttpsRedirection();
 
 // 5. Habilitar servir arquivos estáticos (para acessarmos as imagens via URL)
 app.UseStaticFiles(); 
 
 app.MapControllers();
 
-app.Run();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+app.Run($"http://0.0.0.0:{port}");

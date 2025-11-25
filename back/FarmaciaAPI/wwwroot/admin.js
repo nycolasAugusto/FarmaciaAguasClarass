@@ -1,6 +1,6 @@
 // CONFIGURAÇÃO DA API
 // Deixe vazio para que o navegador use o mesmo domínio do site atual.
-const API_BASE_URL = ""; 
+const API_BASE_URL = "https://farmaciaaguasclarass-1.onrender.com"; 
 const API_ENDPOINT = "/api/banners"; // Caminho base dos banners
 
 // 1. Carregar Lista de Banners ao abrir a página
